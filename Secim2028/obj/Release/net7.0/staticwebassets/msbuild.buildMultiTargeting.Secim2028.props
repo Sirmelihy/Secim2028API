@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Secim2028.props" />
+</Project>
