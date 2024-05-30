@@ -7,9 +7,7 @@
 
 **Secim2028API** was developed to replicate and function similarly to Anadolu Agency's API, which provides election data for news channels that are its clients. This project is used to provide real-time election data.
 
-**Publicly available at** : secim202820240512205232.azurewebsites.net
-
-**Swagger UI** : **[secim202820240512205232.azurewebsites.net/swagger/index.html](secim202820240512205232.azurewebsites.net/swagger/index.html)**
+**Publicly available at** : **[secim202820240512205232.azurewebsites.net/swagger/index.html](https://secim202820240512205232.azurewebsites.net/swagger/index.html)**
 
 
 ## Features
@@ -136,7 +134,7 @@ Authorization: Bearer <Your-jwt-Token>
 
 ### 
 
-To see every endpoint please visit the Swagger UI [here](secim202820240512205232.azurewebsites.net/swagger/index.html)
+To see every endpoint please visit the Swagger UI [here](https://secim202820240512205232.azurewebsites.net/swagger/index.html)
 
 
 
