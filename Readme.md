@@ -1,6 +1,10 @@
 
 # Secim2028API
 
+<div align="center" style="text-align: center" >
+   <img src="![headerLogo](https://github.com/Sirmelihy/Secim2028API/assets/58309701/04de23be-ee19-4c6a-8b20-454d8d65af5e)" alt="build">
+</div>
+
 **Secim2028API** was developed to replicate and function similarly to Anadolu Agency's API, which provides election data for news channels that are its clients. This project is used to provide real-time election data.
 
 **Publicly available at** : secim202820240512205232.azurewebsites.net
