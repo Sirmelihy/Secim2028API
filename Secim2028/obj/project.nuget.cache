@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Guvlq7Q02/hSgtO9dg8Wf9OQOWK9QriFE4TeLyW8hnSXQyd76ktG/Xyvv42jez3r5LhN9zJhrfbRwxqsbMAsew==",
+  "dgSpecHash": "jptNPg9yaeYEw4RctVfTc6krV5LEOKNSZsSJFLu1PGBWy66rJpiNxvT28OrCKEuA9jX7gwwDQIya551Z9/u/sw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\melih\\Desktop\\latestVersion\\bra\\Secim2028\\Secim2028\\Secim2028.csproj",
+  "projectFilePath": "C:\\Users\\melih\\Desktop\\Secim2028API\\bra\\Secim2028\\Secim2028\\Secim2028.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\melih\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\melih\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

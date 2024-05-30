@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\melih\\Desktop\\latestVersion\\bra\\Secim2028\\Secim2028\\Secim2028.csproj": {}
+    "C:\\Users\\melih\\Desktop\\Secim2028API\\bra\\Secim2028\\Secim2028\\Secim2028.csproj": {}
   },
   "projects": {
-    "C:\\Users\\melih\\Desktop\\latestVersion\\bra\\Secim2028\\Secim2028\\Secim2028.csproj": {
+    "C:\\Users\\melih\\Desktop\\Secim2028API\\bra\\Secim2028\\Secim2028\\Secim2028.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\melih\\Desktop\\latestVersion\\bra\\Secim2028\\Secim2028\\Secim2028.csproj",
+        "projectUniqueName": "C:\\Users\\melih\\Desktop\\Secim2028API\\bra\\Secim2028\\Secim2028\\Secim2028.csproj",
         "projectName": "Secim2028",
-        "projectPath": "C:\\Users\\melih\\Desktop\\latestVersion\\bra\\Secim2028\\Secim2028\\Secim2028.csproj",
+        "projectPath": "C:\\Users\\melih\\Desktop\\Secim2028API\\bra\\Secim2028\\Secim2028\\Secim2028.csproj",
         "packagesPath": "C:\\Users\\melih\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\melih\\Desktop\\latestVersion\\bra\\Secim2028\\Secim2028\\obj\\",
+        "outputPath": "C:\\Users\\melih\\Desktop\\Secim2028API\\bra\\Secim2028\\Secim2028\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\melih\\AppData\\Roaming\\NuGet\\NuGet.Config",
