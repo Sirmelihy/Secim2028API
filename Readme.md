@@ -105,8 +105,7 @@ Here are some of the examples.
 
 <details>
 <summary>Get Candidates</summary>
-#### Get Candidates
-
+\
 Retrieves list of all candidates.
 
 **URL** : `GET /api/Aday`
@@ -140,17 +139,122 @@ Retrieves list of all candidates.
 ```
 </details>
 
-`GET /api/Aday` (Gives list of all candidates) 
+<details>
+   <summary>Add Candidate</summary>
+   \
+   Add a new candidate to the 'Candidate' table.
 
-`POST /api/Aday/ChangeAday?id={cID}&name={name}` (Changes the name of Candidate)\
-Authorization: Bearer <Your-jwt-Token>
+**URL** : `/api/Aday/AddAdays`
 
-#### Political Parties
+**Method** : `POST`
 
-`GET /api/SiyasiParti` (Fetches list of all political parties)
+**Auth required** : YES
 
-`POST /api/SiyasiParti/DeleteSiyasiParti?id={ppID}` (Deletes the certain political party from db)\
-Authorization: Bearer <Your-jwt-Token>
+**Permissions required** : admin
+
+**Data Consraints**
+
+```json
+[
+  {
+    "adayAdi": "Ekrem İMAMOĞLU",
+    "partiId": 19
+  },
+  {
+    "adayAdi": "Mansur YAVAŞ",
+    "partiId": 19
+  }
+
+]
+
+
+```
+</details>
+
+<details>
+   <summary>Change Candidate</summary>
+   \
+   Changes the name of the candidate
+
+**URL** : `/api/Aday/ChangeAday?id={cID}&name={name}`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+</details>
+
+### Political Parties
+
+<details>
+<summary>Get Political Parties</summary>
+
+Retrieves list of all political parties.
+
+**URL** : `/api/SiyasiParti`
+
+**Method** : `GET`
+
+**Auth required** : NO
+
+**Permissions required** : None
+
+**Success Response**
+
+**Code** : `200 OK`
+
+```json
+[
+  {
+    "siyasiPartiId": 10,
+    "siyasiPartiAdi": "Adalet Birlik Partisi",
+    "siyasiPartiKisaltma": "ABP"
+  }
+]
+```
+</details>
+
+<details>
+<summary>Add Political Party</summary>
+
+\
+Add a new political party to the 'Parties' table.
+
+**URL** : `/api/SiyasiParti`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+
+**Data constraints**
+
+```json
+[
+  {
+    "siyasiPartiAdi": "İyi Şeyler Partisi",
+    "siyasiPartiKisaltma": "ŞEY"
+  }
+]
+```
+</details>
+
+<details>
+<summary>Delete Political Party</summary>
+
+\
+Delete a political party from the 'Parties' table.
+
+**URL** : `/api/SiyasiParti/DeleteSiyasiParti?id={ppID}`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+</details>
 
 #### Voting
 
