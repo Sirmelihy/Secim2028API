@@ -260,13 +260,69 @@ Delete a political party from the 'Parties' table.
 **Permissions required** : admin
 </details>
 
-#### Voting
+### Voting
 
-`POST /api/OyParti?sandikNo={bbID}&partiId={ppID}&OySayisi={count}` (Adds vote to certain political party on certain Ballot Box)\
-Authorization: Bearer <Your-jwt-Token>
+<details>
+<summary>Add Random Vote to Candidate</summary>
 
-`POST /api/OyParti/ClearSandik?sandikNo={bbID}` (Clears all political party votings from certain Ballot Box)\
-Authorization: Bearer <Your-jwt-Token>
+\
+Add vote to a candidate in a random ballot box.
+
+**URL** : `/api/OyAday/AddRandomSandikOy?ilid={cityID}&adayId={candidateID}&OySayisi={Count}`
+
+**Method** : `POST`
+
+**Auth required** : NO
+
+**Permissions required** : None
+</details>
+
+<details>
+<summary>Clear Ballot Box Candidate</summary>
+
+\
+Clear all candidate votes from a ballot box.
+
+**URL** : `/api/OyAday/ClearSandik?sandikNo={BallotBoxNo}`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+</details>
+
+------
+
+<details>
+<summary>Add Random Vote to Political Party</summary>
+
+\
+Add vote to a political party in a random ballot box.
+
+**URL** : `/api/OyParti/AddRandomSandikOy?ilid={cityID}&partiId={partyId}&OySayisi={Count}`
+
+**Method** : `POST`
+
+**Auth required** : NO
+
+**Permissions required** : None
+</details>
+
+<details>
+<summary>Clear Ballot Box Political Party</summary>
+
+\
+Clear all political party votes from a ballot box.
+
+**URL** : `/api/OyAday/ClearSandik?sandikNo={BallotBoxNo}`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+</details>
 
 
 
