@@ -260,6 +260,104 @@ Delete a political party from the 'Parties' table.
 **Permissions required** : admin
 </details>
 
+### Alliance
+
+<details>
+<summary>Get Alliances</summary>
+
+\
+Retrieves all alliances along with the political parties that belong to them.
+
+**URL** : `/api/Ittifak`
+
+**Method** : `GET`
+
+**Auth required** : NO
+
+**Permissions required** : None
+
+**Success Response**
+
+**Code** : `200 OK`
+
+```json
+[
+  {
+    "ittifakId": 1,
+    "ittifakAdi": "Cumhur İttifakı",
+    "siyasiPartis": [
+      {
+        "siyasiPartiId": 12,
+        "siyasiPartiAdi": "Adalet ve Kalkınma Partisi",
+        "siyasiPartiKisaltma": "AKP"
+      },
+      {
+        "siyasiPartiId": 34,
+        "siyasiPartiAdi": "Milliyetçi Hareket Partisi",
+        "siyasiPartiKisaltma": "MHP"
+      },
+      {
+        "siyasiPartiId": 42,
+        "siyasiPartiAdi": "Yeniden Refah Partisi",
+        "siyasiPartiKisaltma": "YRP"
+      }
+    ]
+  },
+  {
+    "ittifakId": 31,
+    "ittifakAdi": "Liberal İttifak",
+    "siyasiPartis": [
+      {
+        "siyasiPartiId": 54,
+        "siyasiPartiAdi": "Liberal Demokrat Parti",
+        "siyasiPartiKisaltma": "LDP"
+      }
+    ]
+  }
+]
+```
+</details>
+
+<details>
+<summary>Add alliance</summary>
+
+\
+Add a new alliance to the 'alliance' table
+
+**URL** : `/api/Ittifak/AddIttifak`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+
+**Data Constrainst**
+
+```json
+{
+  "ittifakAdi": "İyi Şeyler İttifakı",
+}
+```
+
+</details>
+
+<details>
+<summary>Delete alliance</summary>
+
+\
+Delete a alliance from the 'alliance' table
+
+**URL** : `/api/Ittifak/DeleteIttifak?ittifakid={aID}`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+
+</details>
+
 ### Voting
 
 <details>
@@ -291,8 +389,6 @@ Clear all candidate votes from a ballot box.
 
 **Permissions required** : admin
 </details>
-
-------
 
 <details>
 <summary>Add Random Vote to Political Party</summary>
@@ -326,10 +422,39 @@ Clear all political party votes from a ballot box.
 
 
 
-#### Results
+### Results
 
-`/api/Oylar/AdayWinTimesOfIl` (Gives Each aday winning counts of cities)\
-Authorization: Bearer <Your-jwt-Token>
+<details>
+<summary>Get Candidate win times</summary>
+
+\
+Retrieves each candidate winning counts of cities
+
+**URL** : `GET /api/Oylar/AdayWinTimesOfIl`
+
+**Method** : `GET`
+
+**Auth required** : NO
+
+**Permissions required** : None
+
+**Success Response**
+
+**Code** : `200 OK`
+
+```json
+[
+  {
+    "adayName": "Recep Tayyip Erdoğan",
+    "winCount": 49
+  },
+  {
+    "adayName": "Kemal Kılıçdaroğlu",
+    "winCount": 32
+  }
+]
+```
+</details>
 
 
 
