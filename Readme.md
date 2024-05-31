@@ -104,7 +104,8 @@ Here are some of the examples.
 ### Candidate
 
 <details>
-**<summary>Get Candidates</summary>**
+<summary>Get Candidates</summary>
+#### Get Candidates
 
 Retrieves list of all candidates.
 
