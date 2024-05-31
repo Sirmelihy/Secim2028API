@@ -105,6 +105,7 @@ Here are some of the examples.
 
 <details>
 <summary>Get Candidates</summary>
+   
 \
 Retrieves list of all candidates.
 
@@ -141,6 +142,7 @@ Retrieves list of all candidates.
 
 <details>
    <summary>Add Candidate</summary>
+   
    \
    Add a new candidate to the 'Candidate' table.
 
@@ -173,6 +175,7 @@ Retrieves list of all candidates.
 
 <details>
    <summary>Change Candidate</summary>
+   
    \
    Changes the name of the candidate
 
@@ -190,6 +193,7 @@ Retrieves list of all candidates.
 <details>
 <summary>Get Political Parties</summary>
 
+\
 Retrieves list of all political parties.
 
 **URL** : `/api/SiyasiParti`
