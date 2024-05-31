@@ -171,4 +171,7 @@ The Secim2028API is open to all kinds of contributions. Follow these steps in or
 ## Contact
 
 For any questions or feedback please feel free to reach out me from melihokutanbs@hotmail.com
+**[Linkedin](https://www.linkedin.com/in/melihokutan5/)**
+**[GitHub](https://github.com/Sirmelihy)**
+
 
