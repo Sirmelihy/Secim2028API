@@ -101,11 +101,48 @@ The Secim2028API project offers a range of API endpoints, including vote rates b
 
 Here are some of the examples.
 
-#### Candidates
+### Candidate
+
+<details>
+<summary>Get Candidates</summary>
+   #### Get Candidates
+
+Retrieves list of all candidates.
+
+**URL** : `GET /api/Aday`
+
+**Method** : `GET`
+
+**Auth required** : NO
+
+**Permissions required** : None
+
+**Success Response**
+
+**Code** : `200 OK`
+
+```json
+[
+  {
+    "adayId": 14,
+    "adayAdi": "Kemal Kılıçdaroğlu",
+    "siyasiParti": {
+      "siyasiPartiId": 19,
+      "siyasiPartiAdi": "Cumhuriyet Halk Partisi",
+      "siyasiPartiKisaltma": "CHP",
+      "ittifak": {
+        "ittifakId": 2,
+        "ittifakAdi": "Millet İttifakı"
+      }
+    }
+  }
+]
+```
+</details>
 
 `GET /api/Aday` (Gives list of all candidates) 
 
-`GET /api/Aday/ChangeAday?id=(cID)&name={name}` (Changes the name of Candidate)\
+`POST /api/Aday/ChangeAday?id={cID}&name={name}` (Changes the name of Candidate)\
 Authorization: Bearer <Your-jwt-Token>
 
 #### Political Parties
