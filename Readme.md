@@ -1,11 +1,13 @@
 
 # Secim2028API
 
+<div align="center" style="text-align: center" >
+   <img src="https://github.com/Sirmelihy/Secim2028API/assets/58309701/80d8e986-b625-4de2-b006-cfcc58df4ab7" alt="build" style="width: 250px; height: 250px;">
+</div>
+
 **Secim2028API** was developed to replicate and function similarly to Anadolu Agency's API, which provides election data for news channels that are its clients. This project is used to provide real-time election data.
 
-**Publicly available at** : secim202820240512205232.azurewebsites.net
-
-**Swagger UI** : **[secim202820240512205232.azurewebsites.net/swagger/index.html](secim202820240512205232.azurewebsites.net/swagger/index.html)**
+**Publicly available at** : **[secim202820240512205232.azurewebsites.net/swagger/index.html](https://secim202820240512205232.azurewebsites.net/swagger/index.html)**
 
 
 ## Features
@@ -99,40 +101,366 @@ The Secim2028API project offers a range of API endpoints, including vote rates b
 
 Here are some of the examples.
 
-#### Candidates
+### Candidate
 
-`GET /api/Aday` (Gives list of all candidates) 
+<details>
+<summary>Get Candidates</summary>
+   
+\
+Retrieves list of all candidates.
 
-`GET /api/Aday/ChangeAday?id=(cID)&name={name}` (Changes the name of Candidate)\
-Authorization: Bearer <Your-jwt-Token>
+**URL** : `GET /api/Aday`
 
-#### Political Parties
+**Method** : `GET`
 
-`GET /api/SiyasiParti` (Fetches list of all political parties)
+**Auth required** : NO
 
-`POST /api/SiyasiParti/DeleteSiyasiParti?id={ppID}` (Deletes the certain political party from db)\
-Authorization: Bearer <Your-jwt-Token>
+**Permissions required** : None
 
-#### Voting
+**Success Response**
 
-`POST /api/OyParti?sandikNo={bbID}&partiId={ppID}&OySayisi={count}` (Adds vote to certain political party on certain Ballot Box)\
-Authorization: Bearer <Your-jwt-Token>
+**Code** : `200 OK`
 
-`POST /api/OyParti/ClearSandik?sandikNo={bbID}` (Clears all political party votings from certain Ballot Box)\
-Authorization: Bearer <Your-jwt-Token>
+```json
+[
+  {
+    "adayId": 14,
+    "adayAdi": "Kemal Kılıçdaroğlu",
+    "siyasiParti": {
+      "siyasiPartiId": 19,
+      "siyasiPartiAdi": "Cumhuriyet Halk Partisi",
+      "siyasiPartiKisaltma": "CHP",
+      "ittifak": {
+        "ittifakId": 2,
+        "ittifakAdi": "Millet İttifakı"
+      }
+    }
+  }
+]
+```
+</details>
+
+<details>
+   <summary>Add Candidate</summary>
+   
+   \
+   Add a new candidate to the 'Candidate' table.
+
+**URL** : `/api/Aday/AddAdays`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+
+**Data Consraints**
+
+```json
+[
+  {
+    "adayAdi": "Ekrem İMAMOĞLU",
+    "partiId": 19
+  },
+  {
+    "adayAdi": "Mansur YAVAŞ",
+    "partiId": 19
+  }
+
+]
+
+
+```
+</details>
+
+<details>
+   <summary>Change Candidate</summary>
+   
+   \
+   Changes the name of the candidate
+
+**URL** : `/api/Aday/ChangeAday?id={cID}&name={name}`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+</details>
+
+### Political Parties
+
+<details>
+<summary>Get Political Parties</summary>
+
+\
+Retrieves list of all political parties.
+
+**URL** : `/api/SiyasiParti`
+
+**Method** : `GET`
+
+**Auth required** : NO
+
+**Permissions required** : None
+
+**Success Response**
+
+**Code** : `200 OK`
+
+```json
+[
+  {
+    "siyasiPartiId": 10,
+    "siyasiPartiAdi": "Adalet Birlik Partisi",
+    "siyasiPartiKisaltma": "ABP"
+  }
+]
+```
+</details>
+
+<details>
+<summary>Add Political Party</summary>
+
+\
+Add a new political party to the 'Parties' table.
+
+**URL** : `/api/SiyasiParti`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+
+**Data constraints**
+
+```json
+[
+  {
+    "siyasiPartiAdi": "İyi Şeyler Partisi",
+    "siyasiPartiKisaltma": "ŞEY"
+  }
+]
+```
+</details>
+
+<details>
+<summary>Delete Political Party</summary>
+
+\
+Delete a political party from the 'Parties' table.
+
+**URL** : `/api/SiyasiParti/DeleteSiyasiParti?id={ppID}`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+</details>
+
+### Alliance
+
+<details>
+<summary>Get Alliances</summary>
+
+\
+Retrieves all alliances along with the political parties that belong to them.
+
+**URL** : `/api/Ittifak`
+
+**Method** : `GET`
+
+**Auth required** : NO
+
+**Permissions required** : None
+
+**Success Response**
+
+**Code** : `200 OK`
+
+```json
+[
+  {
+    "ittifakId": 1,
+    "ittifakAdi": "Cumhur İttifakı",
+    "siyasiPartis": [
+      {
+        "siyasiPartiId": 12,
+        "siyasiPartiAdi": "Adalet ve Kalkınma Partisi",
+        "siyasiPartiKisaltma": "AKP"
+      },
+      {
+        "siyasiPartiId": 34,
+        "siyasiPartiAdi": "Milliyetçi Hareket Partisi",
+        "siyasiPartiKisaltma": "MHP"
+      },
+      {
+        "siyasiPartiId": 42,
+        "siyasiPartiAdi": "Yeniden Refah Partisi",
+        "siyasiPartiKisaltma": "YRP"
+      }
+    ]
+  },
+  {
+    "ittifakId": 31,
+    "ittifakAdi": "Liberal İttifak",
+    "siyasiPartis": [
+      {
+        "siyasiPartiId": 54,
+        "siyasiPartiAdi": "Liberal Demokrat Parti",
+        "siyasiPartiKisaltma": "LDP"
+      }
+    ]
+  }
+]
+```
+</details>
+
+<details>
+<summary>Add alliance</summary>
+
+\
+Add a new alliance to the 'alliance' table
+
+**URL** : `/api/Ittifak/AddIttifak`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+
+**Data Constrainst**
+
+```json
+{
+  "ittifakAdi": "İyi Şeyler İttifakı",
+}
+```
+
+</details>
+
+<details>
+<summary>Delete alliance</summary>
+
+\
+Delete a alliance from the 'alliance' table
+
+**URL** : `/api/Ittifak/DeleteIttifak?ittifakid={aID}`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+
+</details>
+
+### Voting
+
+<details>
+<summary>Add Random Vote to Candidate</summary>
+
+\
+Add vote to a candidate in a random ballot box.
+
+**URL** : `/api/OyAday/AddRandomSandikOy?ilid={cityID}&adayId={candidateID}&OySayisi={Count}`
+
+**Method** : `POST`
+
+**Auth required** : NO
+
+**Permissions required** : None
+</details>
+
+<details>
+<summary>Clear Ballot Box Candidate</summary>
+
+\
+Clear all candidate votes from a ballot box.
+
+**URL** : `/api/OyAday/ClearSandik?sandikNo={BallotBoxNo}`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+</details>
+
+<details>
+<summary>Add Random Vote to Political Party</summary>
+
+\
+Add vote to a political party in a random ballot box.
+
+**URL** : `/api/OyParti/AddRandomSandikOy?ilid={cityID}&partiId={partyId}&OySayisi={Count}`
+
+**Method** : `POST`
+
+**Auth required** : NO
+
+**Permissions required** : None
+</details>
+
+<details>
+<summary>Clear Ballot Box Political Party</summary>
+
+\
+Clear all political party votes from a ballot box.
+
+**URL** : `/api/OyAday/ClearSandik?sandikNo={BallotBoxNo}`
+
+**Method** : `POST`
+
+**Auth required** : YES
+
+**Permissions required** : admin
+</details>
 
 
 
-#### Results
+### Results
 
-`/api/Oylar/AdayWinTimesOfIl` (Gives Each aday winning counts of cities)\
-Authorization: Bearer <Your-jwt-Token>
+<details>
+<summary>Get Candidate win times</summary>
+
+\
+Retrieves each candidate winning counts of cities
+
+**URL** : `GET /api/Oylar/AdayWinTimesOfIl`
+
+**Method** : `GET`
+
+**Auth required** : NO
+
+**Permissions required** : None
+
+**Success Response**
+
+**Code** : `200 OK`
+
+```json
+[
+  {
+    "adayName": "Recep Tayyip Erdoğan",
+    "winCount": 49
+  },
+  {
+    "adayName": "Kemal Kılıçdaroğlu",
+    "winCount": 32
+  }
+]
+```
+</details>
 
 
 
 ### 
 
-To see every endpoint please visit the Swagger UI [here](secim202820240512205232.azurewebsites.net/swagger/index.html)
+To see every endpoint please visit the Swagger UI [here](https://secim202820240512205232.azurewebsites.net/swagger/index.html)
 
 
 
@@ -168,5 +496,8 @@ The Secim2028API is open to all kinds of contributions. Follow these steps in or
 
 ## Contact
 
-For any questions or feedback please feel free to reach out me from melihokutanbs@hotmail.com
+For any questions or feedback please feel free to reach out me from melihokutanbs@hotmail.com\
+**[Linkedin](https://www.linkedin.com/in/melihokutan5/)**\
+**[GitHub](https://github.com/Sirmelihy)**
+
 
