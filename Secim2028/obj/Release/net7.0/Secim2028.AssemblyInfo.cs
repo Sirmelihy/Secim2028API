@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Secim2028")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+583b13cc85438c4bb3d9515f0f1910af361c38e7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5c0796a4095d39fe5571a78293e283efd00da6ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("Secim2028")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Secim2028")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
