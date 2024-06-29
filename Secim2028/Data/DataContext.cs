@@ -14,7 +14,7 @@ namespace Secim2028.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = _config.GetSection("ConnectionStrings:cnctstring").Value;
+            var connectionString = _config.GetSection("ConnectionStrings:dev").Value;
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(connectionString);
 
